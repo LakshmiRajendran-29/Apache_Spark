@@ -1,0 +1,23 @@
+import org.apache.spark.SparkContext
+
+object parallelize {
+
+  def main(args: Array[String]): Unit = {
+    //val list = List(20,20,80,20,50,60,70,80,70)
+
+    val words = Array("Apple","Apple","Apple","Orange","Orange","Banana")
+
+    val sc = new SparkContext("local[*]","Sprak-Program")
+
+    val rdd = sc.parallelize(words) // send list
+
+    val rdd1 = rdd.map(x => (x,1))
+
+    val rdd2 = rdd1.reduceByKey((x,y) => x+y)
+    rdd2.collect.foreach(println)
+
+
+
+
+  }
+}
