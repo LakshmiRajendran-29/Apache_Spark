@@ -1,11 +1,11 @@
 import org.apache.spark.SparkContext
 
-object parallise {
+object parallelise {
 
   def main(args: Array[String]): Unit = {
     //val list = List(20,20,80,20,50,60,70,80,70)
 
-    val words = Array("Lakshmi","Lakshmi","Lakshmi","Tanushri","Tanushri","Harshini")
+    val words = Array("A","A","B","C","D","D")
 
     val sc = new SparkContext("local[*]","Sprak-Program")
 
